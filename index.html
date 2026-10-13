@@ -69,6 +69,45 @@
   </style>
 </head>
 <body class="min-h-screen flex items-center justify-center p-0 sm:p-4 bg-slate-950">
+  <body class="min-h-screen flex items-center justify-center p-0 sm:p-4 bg-slate-950">
+
+  <div id="splash">
+    <img src="logo.png" alt="우리반네컷">
+  </div>
+
+  <style>
+    #splash {
+      position: fixed;
+      inset: 0;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+      transition: opacity 0.6s ease;
+    }
+    #splash img {
+      width: 40vw;
+      max-width: 220px;
+    }
+    #splash.hide {
+      opacity: 0;
+      pointer-events: none;
+    }
+  </style>
+
+  <script>
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const s = document.getElementById('splash');
+        s.classList.add('hide');
+        setTimeout(() => s.remove(), 600);
+      }, 1500);
+    });
+  </script>
+
+  <!-- 화이트 플래시 오버레이 -->
+  ...
 
   <!-- 화이트 플래시 오버레이 -->
   <div id="screenFlashOverlay" class="fixed inset-0 bg-white z-[9999] opacity-0 pointer-events-none"></div>
